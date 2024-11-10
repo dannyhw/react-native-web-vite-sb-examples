@@ -1,5 +1,6 @@
-/** @type{import("@storybook/react-native-web-vite").StorybookConfig} */
-module.exports = {
+import type { StorybookConfig } from "@storybook/react-native-web-vite";
+
+export default {
   stories: [
     "../components/**/*.stories.mdx",
     "../components/**/*.stories.@(js|jsx|ts|tsx)",
@@ -9,7 +10,18 @@ module.exports = {
 
   framework: {
     name: "@storybook/react-native-web-vite",
-    options: {},
+    options: {
+      pluginReactOptions: {
+        jsxRuntime: "automatic",
+        jsxImportSource: "nativewind",
+        babel: {
+          plugins: [
+            // "@babel/plugin-proposal-export-namespace-from",
+            "react-native-reanimated/plugin",
+          ],
+        },
+      },
+    },
   },
 
   docs: {},
@@ -17,4 +29,4 @@ module.exports = {
   typescript: {
     reactDocgen: "react-docgen-typescript",
   },
-};
+} satisfies StorybookConfig;

@@ -1,4 +1,6 @@
 import type { Preview } from "@storybook/react";
+import { View } from "react-native";
+import "../global.css";
 
 const preview: Preview = {
   parameters: {
@@ -11,7 +13,14 @@ const preview: Preview = {
     },
   },
 
-  tags: ["autodocs"]
+  tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <View>
+        <Story />
+      </View>
+    ),
+  ],
 };
 
 export default preview;
