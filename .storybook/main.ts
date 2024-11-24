@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-native-web-vite";
+import { mergeConfig } from "vite";
+import { flowPlugin, esbuildFlowPlugin } from "@bunchtogether/vite-plugin-flow";
 
 export default {
   stories: [
@@ -15,13 +17,21 @@ export default {
         jsxRuntime: "automatic",
         jsxImportSource: "nativewind",
         babel: {
-          plugins: [
-            // "@babel/plugin-proposal-export-namespace-from",
-            "react-native-reanimated/plugin",
-          ],
+          plugins: ["react-native-reanimated/plugin"],
         },
       },
     },
+  },
+
+  viteFinal: (config) => {
+    return mergeConfig(config, {
+      optimizeDeps: {
+        esbuildOptions: {
+          plugins: [esbuildFlowPlugin()],
+        },
+      },
+      plugins: [flowPlugin()],
+    });
   },
 
   docs: {},
