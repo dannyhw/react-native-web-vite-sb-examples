@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "../global.css";
 
 const preview: Preview = {
@@ -16,9 +17,11 @@ const preview: Preview = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <View>
-        <Story />
-      </View>
+      <GestureHandlerRootView>
+        <View>
+          <Story />
+        </View>
+      </GestureHandlerRootView>
     ),
   ],
 };

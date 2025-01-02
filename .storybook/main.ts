@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-native-web-vite";
 import { mergeConfig } from "vite";
-import { flowPlugin, esbuildFlowPlugin } from "@bunchtogether/vite-plugin-flow";
+import babel from "vite-plugin-babel";
 
 export default {
   stories: [
@@ -17,7 +17,14 @@ export default {
         jsxRuntime: "automatic",
         jsxImportSource: "nativewind",
         babel: {
-          plugins: ["react-native-reanimated/plugin"],
+          plugins: [
+            "react-native-web",
+            "@babel/plugin-proposal-export-namespace-from",
+            "react-native-reanimated/plugin",
+          ],
+
+          babelrc: false,
+          configFile: false,
         },
       },
     },
@@ -25,12 +32,32 @@ export default {
 
   viteFinal: (config) => {
     return mergeConfig(config, {
-      optimizeDeps: {
-        esbuildOptions: {
-          plugins: [esbuildFlowPlugin()],
-        },
-      },
-      plugins: [flowPlugin()],
+      plugins: [
+        babel({
+          include: [/node_modules\/(react-native|@react-native|expo-image)/],
+          exclude: [/node_modules\/(react-native-gesture-handler)/],
+          babelConfig: {
+            babelrc: false,
+            configFile: false,
+            presets: [
+              // [
+              //   "@babel/preset-react",
+              //   {
+              //     jsxRuntime: "automatic",
+              //     jsxImportSource: "nativewind",
+              //   },
+              // ],
+              ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+              "@babel/preset-flow",
+            ],
+            plugins: [
+              "react-native-web",
+              "@babel/plugin-proposal-export-namespace-from",
+              "react-native-reanimated/plugin",
+            ],
+          },
+        }),
+      ],
     });
   },
 

@@ -24,6 +24,9 @@ type PressableOpacity = StoryObj<typeof PressableOpacity>;
 
 export const Basic: PressableOpacity = {
   args: {
+    onPress: () => {
+      console.log("onPress");
+    },
     children: <Text style={{ color: "white" }}>Hello world!</Text>,
     style: {
       paddingVertical: 16,
