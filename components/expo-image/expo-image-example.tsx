@@ -6,15 +6,13 @@ const blurhash =
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
   image: {
-    flex: 1,
-    width: "100%",
-    backgroundColor: "#0553",
+    width: 400,
+    height: 400,
   },
 });
 

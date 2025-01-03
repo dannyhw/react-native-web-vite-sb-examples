@@ -17,11 +17,9 @@ const preview: Preview = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <GestureHandlerRootView>
-        <View>
-          <Story />
-        </View>
-      </GestureHandlerRootView>
+      <View>
+        <Story />
+      </View>
     ),
   ],
 };

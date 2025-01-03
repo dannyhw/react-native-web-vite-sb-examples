@@ -1,5 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-native-web-vite";
-import { mergeConfig } from "vite";
+import { InlineConfig, mergeConfig } from "vite";
 import babel from "vite-plugin-babel";
 
 export default {
@@ -32,9 +32,14 @@ export default {
 
   viteFinal: (config) => {
     return mergeConfig(config, {
+      define: {
+        "process.env.EXPO_OS": JSON.stringify("web"),
+      },
+
       plugins: [
         babel({
-          include: [/node_modules\/(react-native|@react-native|expo-image)/],
+          include: [/node_modules\/(react-native|@react-native)/],
+          // gesture handler is already transpiled
           exclude: [/node_modules\/(react-native-gesture-handler)/],
           babelConfig: {
             babelrc: false,
@@ -47,8 +52,9 @@ export default {
               //     jsxImportSource: "nativewind",
               //   },
               // ],
+
+              // for some reason this works better than the preset above
               ["babel-preset-expo", { jsxImportSource: "nativewind" }],
-              "@babel/preset-flow",
             ],
             plugins: [
               "react-native-web",
@@ -58,7 +64,7 @@ export default {
           },
         }),
       ],
-    });
+    } satisfies InlineConfig);
   },
 
   docs: {},
