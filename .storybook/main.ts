@@ -70,6 +70,6 @@ export default {
   docs: {},
 
   typescript: {
-    reactDocgen: "react-docgen-typescript",
+    reactDocgen: "react-docgen",
   },
 } satisfies StorybookConfig;

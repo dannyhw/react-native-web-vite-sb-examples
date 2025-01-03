@@ -77,5 +77,8 @@
       "react-docgen-typescript": "2.2.2"
     }
   },
-  "private": true
+  "private": true,
+  "patchedDependencies": {
+    "expo-image@2.0.3": "patches/expo-image@2.0.3.patch"
+  }
 }

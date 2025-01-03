@@ -1,0 +1,13 @@
+diff --git a/src/ImageModule.web.ts b/src/ImageModule.web.ts
+index 3c113aac5f4502b70e089c9b916aa6db9d7afbb3..65bad3de222db5b42828b9e10ffb2ba4d44264b3 100644
+--- a/src/ImageModule.web.ts
++++ b/src/ImageModule.web.ts
+@@ -5,7 +5,7 @@ import ImageRefWeb from './web/ImageRef';
+ 
+ class ImageModule extends NativeModule implements ImageNativeModule {
+   // @ts-ignore: Overrides the built-in `Function.name` property
+-  static name = 'ExpoImage';
++  // static name = 'ExpoImage';
+ 
+   Image: typeof ImageRef = ImageRefWeb;
+ 
