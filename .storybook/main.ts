@@ -32,34 +32,31 @@ export default {
 
   viteFinal: (config) => {
     return mergeConfig(config, {
-      define: {
-        "process.env.EXPO_OS": JSON.stringify("web"),
-      },
-
       plugins: [
         babel({
           include: [/node_modules\/(react-native|@react-native)/],
-          // gesture handler is already transpiled
-          exclude: [/node_modules\/(react-native-gesture-handler)/],
           babelConfig: {
             babelrc: false,
             configFile: false,
             presets: [
-              // [
-              //   "@babel/preset-react",
-              //   {
-              //     jsxRuntime: "automatic",
-              //     jsxImportSource: "nativewind",
-              //   },
-              // ],
-
-              // for some reason this works better than the preset above
-              ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+              [
+                "@babel/preset-react",
+                {
+                  development: process.env.NODE_ENV,
+                  jsxRuntime: "automatic",
+                  jsxImportSource: "nativewind",
+                },
+              ],
             ],
             plugins: [
-              "react-native-web",
-              "@babel/plugin-proposal-export-namespace-from",
-              "react-native-reanimated/plugin",
+              [
+                require("@babel/plugin-transform-modules-commonjs"),
+                {
+                  strict: false,
+                  strictMode: false, // prevent "use strict" injections
+                  allowTopLevelThis: true, // dont rewrite global `this` -> `undefined`
+                },
+              ],
             ],
           },
         }),
