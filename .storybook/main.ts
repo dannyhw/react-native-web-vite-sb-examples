@@ -4,7 +4,7 @@ import babel from "vite-plugin-babel";
 
 export default {
   stories: [
-    "../components/**/*.stories.mdx",
+    "../components/**/*.mdx",
     "../components/**/*.stories.@(js|jsx|ts|tsx)",
   ],
 
@@ -28,40 +28,6 @@ export default {
         },
       },
     },
-  },
-
-  viteFinal: (config) => {
-    return mergeConfig(config, {
-      plugins: [
-        babel({
-          include: [/node_modules\/(react-native|@react-native)/],
-          babelConfig: {
-            babelrc: false,
-            configFile: false,
-            presets: [
-              [
-                "@babel/preset-react",
-                {
-                  development: process.env.NODE_ENV,
-                  jsxRuntime: "automatic",
-                  jsxImportSource: "nativewind",
-                },
-              ],
-            ],
-            plugins: [
-              [
-                require("@babel/plugin-transform-modules-commonjs"),
-                {
-                  strict: false,
-                  strictMode: false, // prevent "use strict" injections
-                  allowTopLevelThis: true, // dont rewrite global `this` -> `undefined`
-                },
-              ],
-            ],
-          },
-        }),
-      ],
-    } satisfies InlineConfig);
   },
 
   docs: {},
