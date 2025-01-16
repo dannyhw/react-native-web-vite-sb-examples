@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Text, View } from "react-native";
 import { PressableOpacity } from "./PressableOpacity";
+import { FontLoader } from "FontLoader";
 
 // of course you can just use TouchableOpacity, but this example is a really easy one to show how you can use reanimated to create a custom button
 const PressableOpacityMeta: Meta<typeof PressableOpacity> = {
@@ -66,3 +67,20 @@ export const LinkExample: PressableOpacity = {
     style: {},
   },
 };
+
+
+export const FontExample: PressableOpacity = {
+  decorators: [
+    (Story) => (
+      <FontLoader>
+        <Story />
+      </FontLoader>
+    ),
+  ],
+  args: {
+    children: (
+      <Text style={{ fontFamily: "SuperCartoon" }}>Hello world!</Text>
+    ),
+    style: {},
+  },
+}
