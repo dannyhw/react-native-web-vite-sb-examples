@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import "./global.css";
+import { FontLoader } from "FontLoader";
 
 function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <FontLoader fallback={<View><Text>Loading Fonts...</Text></View>}>
+      <View style={styles.container}>
+        <Text>Open up App.tsx to start working on your app!</Text>
+      </View>
+    </FontLoader>
   );
 }
 
@@ -25,3 +28,5 @@ const styles = StyleSheet.create({
 });
 
 export default AppEntryPoint;
+
+
