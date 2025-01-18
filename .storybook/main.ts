@@ -1,6 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-native-web-vite";
 import { InlineConfig, mergeConfig } from "vite";
 import babel from "vite-plugin-babel";
+import commonjs from "vite-plugin-commonjs";
 
 export default {
   stories: [
@@ -28,6 +29,12 @@ export default {
         },
       },
     },
+  },
+
+  viteFinal: (config) => {
+    return mergeConfig(config, {
+      plugins: [commonjs()],
+    });
   },
 
   docs: {},
