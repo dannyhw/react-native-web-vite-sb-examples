@@ -23,18 +23,9 @@ export default {
             "@babel/plugin-proposal-export-namespace-from",
             "react-native-reanimated/plugin",
           ],
-
-          babelrc: false,
-          configFile: false,
         },
       },
     },
-  },
-
-  viteFinal: (config) => {
-    return mergeConfig(config, {
-      plugins: [commonjs()],
-    });
   },
 
   docs: {},
