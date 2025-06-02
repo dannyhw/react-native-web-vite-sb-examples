@@ -1,4 +1,3 @@
-const path = require("path");
 const { getDefaultConfig } = require("expo/metro-config");
 const { withNativeWind } = require("nativewind/metro");
 
@@ -10,7 +9,6 @@ module.exports = withStorybook(
   withNativeWind(defaultConfig, { input: "./global.css" }),
   {
     enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === "true",
-    configPath: path.resolve(__dirname, "./.ondevice"),
     onDisabledRemoveStorybook: true,
   }
 );

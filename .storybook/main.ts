@@ -1,7 +1,4 @@
 import type { StorybookConfig } from "@storybook/react-native-web-vite";
-import { InlineConfig, mergeConfig } from "vite";
-import babel from "vite-plugin-babel";
-import commonjs from "vite-plugin-commonjs";
 
 export default {
   stories: [
@@ -9,7 +6,7 @@ export default {
     "../components/**/*.stories.@(js|jsx|ts|tsx)",
   ],
 
-  addons: ["@storybook/addon-essentials", "@chromatic-com/storybook"],
+  addons: ["@storybook/addon-docs", "@chromatic-com/storybook"],
 
   framework: {
     name: "@storybook/react-native-web-vite",
