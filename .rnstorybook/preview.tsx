@@ -1,8 +1,16 @@
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import type { Preview } from "@storybook/react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const preview: Preview = {
-  decorators: [withBackgrounds],
+  decorators: [
+    withBackgrounds,
+    (Story) => (
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <Story />
+      </GestureHandlerRootView>
+    ),
+  ],
 
   parameters: {
     backgrounds: {

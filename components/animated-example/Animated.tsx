@@ -10,8 +10,6 @@ export default function AnimatedExample() {
     console.log(value);
   };
 
-  console.log(Platform.OS);
-
   return (
     <View style={styles.container}>
       <Animated.View style={{ ...styles.box, width }} />

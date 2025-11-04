@@ -6,28 +6,26 @@ export default {
     "../components/**/*.stories.@(js|jsx|ts|tsx)",
   ],
 
-  addons: ["@storybook/addon-docs", "@chromatic-com/storybook"],
+  addons: ["@chromatic-com/storybook"],
 
   framework: {
     name: "@storybook/react-native-web-vite",
     options: {
+      modulesToTranspile: [
+        // "react-native-worklets",
+        // "@gorhom/bottom-sheet",
+        // "react-native-reanimated",
+      ],
       pluginReactOptions: {
         jsxRuntime: "automatic",
         jsxImportSource: "nativewind",
         babel: {
           plugins: [
-            "react-native-web",
             "@babel/plugin-proposal-export-namespace-from",
-            "react-native-reanimated/plugin",
+            "react-native-worklets/plugin",
           ],
         },
       },
     },
-  },
-
-  docs: {},
-
-  typescript: {
-    reactDocgen: "react-docgen",
   },
 } satisfies StorybookConfig;

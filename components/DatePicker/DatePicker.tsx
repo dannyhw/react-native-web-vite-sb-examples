@@ -1,7 +1,6 @@
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { Button, Text } from "react-native";
+import { Button, Text, View } from "react-native";
 import { useState } from "react";
-import { SafeAreaView } from "react-native";
 
 export const DatePicker = () => {
   const [date, setDate] = useState(new Date(1598051730000));
@@ -33,7 +32,7 @@ export const DatePicker = () => {
   };
 
   return (
-    <SafeAreaView>
+    <View>
       <Button onPress={showDatepicker} title="Show date picker!" />
 
       <Button onPress={showTimepicker} title="Show time picker!" />
@@ -48,6 +47,6 @@ export const DatePicker = () => {
           onChange={onChange}
         />
       )}
-    </SafeAreaView>
+    </View>
   );
 };
