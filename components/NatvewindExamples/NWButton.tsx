@@ -9,7 +9,7 @@ export function NWButton({
 }) {
   return (
     <Pressable
-      className="bg-blue-500 text-white py-2 px-4 rounded active:bg-blue-600 self-start"
+      className="bg-blue-500 text-white py-2 px-4 rounded active:bg-blue-600 self-start active:scale-95 transition-all"
       onPress={onPress}
     >
       <Text className="text-white font-bold">{text}</Text>
