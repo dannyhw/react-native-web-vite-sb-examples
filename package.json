@@ -58,7 +58,7 @@
     "expo-image": "~3.0.10",
     "storybook": "^10.1.4",
     "typescript": "~5.9.2",
-    "vite": "^6.3.5"
+    "vite": "^7.2.6"
   },
   "resolutions": {
     "react-docgen-typescript": "2.2.2"
