@@ -53,7 +53,7 @@
   },
   "overrides": {
     "react-docgen-typescript": "2.2.2",
-    "vite-plugin-rnw": "next",
+    "vite-plugin-rnw": "0.0.11-next-1",
   },
   "packages": {
     "@adobe/css-tools": ["@adobe/css-tools@4.4.4", "", {}, "sha512-Elp+iwUx5rN5+Y8xLt5/GRoG20WGoDCQ/1Fb+1LiGtvwbDavuSk0jhD/eZdckHAuzcDzccnkv+rEjyWfRx18gg=="],
@@ -1578,7 +1578,7 @@
 
     "vite-plugin-dynamic-import": ["vite-plugin-dynamic-import@1.6.0", "", { "dependencies": { "acorn": "^8.12.1", "es-module-lexer": "^1.5.4", "fast-glob": "^3.3.2", "magic-string": "^0.30.11" } }, "sha512-TM0sz70wfzTIo9YCxVFwS8OA9lNREsh+0vMHGSkWDTZ7bgd1Yjs5RV8EgB634l/91IsXJReg0xtmuQqP0mf+rg=="],
 
-    "vite-plugin-rnw": ["vite-plugin-rnw@0.0.11-next-0", "", { "dependencies": { "@rolldown/pluginutils": "^1.0.0-rc.9", "@vitejs/plugin-react": "^5.2.0", "flow-remove-types": "^2.305.0", "magic-string": "^0.30.21", "vite-plugin-commonjs": "^0.10.4" }, "peerDependencies": { "react-native-web": "*", "typescript": "^5", "vite": "^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0" } }, "sha512-5+CDH179zxnXgoX+XCkUim0WS3f02eD7DMBjE2XRxlLcOY9MuQNAnUNjPK064m1a8qWbrlClA4Y1TJx9SASPEg=="],
+    "vite-plugin-rnw": ["vite-plugin-rnw@0.0.11-next-1", "", { "dependencies": { "@rolldown/pluginutils": "^1.0.0-rc.9", "@vitejs/plugin-react": "^5.2.0", "flow-remove-types": "^2.305.0", "magic-string": "^0.30.21", "vite-plugin-commonjs": "^0.10.4" }, "peerDependencies": { "react-native-web": "*", "typescript": "^5", "vite": "^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0" } }, "sha512-TA/toExWa+loKcy1cBMFo/TUDj/LPmlPtO449bBHxU12dVmBSPhFgSk475MzkJCIe+prAFRfzd3yOvBsbWuunQ=="],
 
     "vite-tsconfig-paths": ["vite-tsconfig-paths@5.1.4", "", { "dependencies": { "debug": "^4.1.1", "globrex": "^0.1.2", "tsconfck": "^3.0.3" }, "peerDependencies": { "vite": "*" }, "optionalPeers": ["vite"] }, "sha512-cYj0LRuLV2c2sMqhqhGpaO3LretdtMn/BVX4cPLanIZuwwrkVl+lK84E/miEXkCHWXuq65rhNN4rXsBcOB3S4w=="],
 

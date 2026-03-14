@@ -11,11 +11,7 @@ export default {
   framework: {
     name: "@storybook/react-native-web-vite",
     options: {
-      modulesToTranspile: [
-        // "react-native-worklets",
-        // "@gorhom/bottom-sheet",
-        // "react-native-reanimated",
-      ],
+      modulesToTranspile: [],
       pluginReactOptions: {
         jsxRuntime: "automatic",
         jsxImportSource: "nativewind",
