@@ -7,5 +7,13 @@
     "paths": {
       "@components/*": ["components/*"] // enables us to use @components/MyComponent
     }
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    ".rnstorybook/**/*.ts",
+    ".rnstorybook/**/*.tsx"
+  ]
 }
