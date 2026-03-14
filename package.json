@@ -62,16 +62,16 @@
   },
   "resolutions": {
     "react-docgen-typescript": "2.2.2",
-    "vite-plugin-rnw": "0.0.11-next-1"
+    "vite-plugin-rnw": "0.0.11"
   },
   "overrides": {
     "react-docgen-typescript": "2.2.2",
-    "vite-plugin-rnw": "0.0.11-next-1"
+    "vite-plugin-rnw": "0.0.11"
   },
   "pnpm": {
     "overrides": {
       "react-docgen-typescript": "2.2.2",
-      "vite-plugin-rnw": "0.0.11-next-1"
+      "vite-plugin-rnw": "0.0.11"
     }
   },
   "private": true
