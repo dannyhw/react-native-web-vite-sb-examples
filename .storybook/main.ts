@@ -24,20 +24,4 @@ export default {
       },
     },
   },
-
-  viteFinal: (config) => {
-    // expo-modules-core ships TS source with type-only re-exports inside a
-    // `declare namespace` (src/ts-declarations/global.ts). Newer rolldown
-    // versions keep those imports, which fails the dev dependency optimizer
-    // with MISSING_EXPORT and leaves the preview hanging. Shimming the
-    // missing (type-only) exports lets the optimizer finish.
-    config.optimizeDeps = {
-      ...config.optimizeDeps,
-      rolldownOptions: {
-        ...config.optimizeDeps?.rolldownOptions,
-        shimMissingExports: true,
-      },
-    };
-    return config;
-  },
 } satisfies StorybookConfig;
