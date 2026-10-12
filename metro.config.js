@@ -5,7 +5,7 @@ const defaultConfig = getDefaultConfig(__dirname);
 
 const {
   withStorybook,
-} = require("@storybook/react-native/metro/withStorybook");
+} = require("@storybook/react-native/withStorybook");
 
 module.exports = withStorybook(
   withNativeWind(defaultConfig, { input: "./global.css" }),
