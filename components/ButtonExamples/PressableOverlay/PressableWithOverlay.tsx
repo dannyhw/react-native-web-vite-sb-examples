@@ -59,7 +59,7 @@ export const PressableWithOverlay = ({
       <Animated.View
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.50)",
-          ...StyleSheet.absoluteFillObject,
+          ...StyleSheet.absoluteFill,
           opacity: opacity,
         }}
         pointerEvents={"none"}
