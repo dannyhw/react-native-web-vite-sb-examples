@@ -1,18 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import "./global.css";
 
-function App() {
+// Storybook is enabled with EXPO_PUBLIC_STORYBOOK_ENABLED=true (see the
+// storybook scripts). withStorybook in metro.config.js then swaps this entry
+// point for .rnstorybook/index.tsx.
+export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
     </View>
   );
-}
-
-let AppEntryPoint = App;
-
-if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === "true") {
-  AppEntryPoint = require("./.rnstorybook").default;
 }
 
 const styles = StyleSheet.create({
@@ -23,5 +20,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-
-export default AppEntryPoint;

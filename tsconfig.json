@@ -2,10 +2,11 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "baseUrl": ".",
     "esModuleInterop": true,
     "paths": {
-      "@components/*": ["components/*"] // enables us to use @components/MyComponent
+      "@components/*": [
+        "./components/*"
+      ] // enables us to use @components/MyComponent
     }
   },
   "include": [
@@ -14,6 +15,7 @@
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx",
     ".rnstorybook/**/*.ts",
-    ".rnstorybook/**/*.tsx"
+    ".rnstorybook/**/*.tsx",
+    "nativewind-env.d.ts"
   ]
 }

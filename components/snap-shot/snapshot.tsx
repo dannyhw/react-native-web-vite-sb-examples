@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useRef } from "react";
 import { Text } from "react-native";
-import ViewShot from "react-native-view-shot";
+import ViewShot, { type ViewShotRef } from "react-native-view-shot";
 
 export function ExampleCaptureOnMountManually() {
-  const ref = useRef<ViewShot>(null);
+  const ref = useRef<ViewShotRef>(null);
 
   useEffect(() => {
     // on mount
