@@ -6,7 +6,7 @@ export default {
     "../components/**/*.stories.@(js|jsx|ts|tsx)",
   ],
 
-  addons: ["@chromatic-com/storybook"],
+  addons: ["@chromatic-com/storybook", "@storybook/addon-docs"],
 
   framework: {
     name: "@storybook/react-native-web-vite",
